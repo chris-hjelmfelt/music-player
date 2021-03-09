@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace MusicPlayer
 {
@@ -43,6 +44,12 @@ namespace MusicPlayer
         {
             // Play the music
             WindowsMediaPlayerEmbed.URL = paths[SongList.SelectedIndex];
+        }
+
+        private void Play_Click(object sender, EventArgs e)
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
+            simpleSound.Play();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
