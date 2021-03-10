@@ -38,6 +38,7 @@ namespace MusicPlayer
             this.WindowsMediaPlayerEmbed = new AxWMPLib.AxWindowsMediaPlayer();
             this.Footer = new System.Windows.Forms.Label();
             this.Play = new System.Windows.Forms.Button();
+            this.AiMusic = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WindowsMediaPlayerEmbed)).BeginInit();
@@ -135,11 +136,25 @@ namespace MusicPlayer
             this.Play.UseVisualStyleBackColor = false;
             this.Play.Click += new System.EventHandler(this.Play_Click);
             // 
+            // AiMusic
+            // 
+            this.AiMusic.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.AiMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AiMusic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AiMusic.Location = new System.Drawing.Point(957, 378);
+            this.AiMusic.Name = "AiMusic";
+            this.AiMusic.Size = new System.Drawing.Size(100, 41);
+            this.AiMusic.TabIndex = 6;
+            this.AiMusic.Text = "AI Music";
+            this.AiMusic.UseVisualStyleBackColor = false;
+            this.AiMusic.Click += new System.EventHandler(this.AiMusic_Click);
+            // 
             // MusicPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 457);
+            this.Controls.Add(this.AiMusic);
             this.Controls.Add(this.Play);
             this.Controls.Add(this.Footer);
             this.Controls.Add(this.WindowsMediaPlayerEmbed);
@@ -170,6 +185,7 @@ namespace MusicPlayer
         private AxWMPLib.AxWindowsMediaPlayer WindowsMediaPlayerEmbed;
         private System.Windows.Forms.Label Footer;
         private System.Windows.Forms.Button Play;
+        private System.Windows.Forms.Button AiMusic;
     }
 }
 

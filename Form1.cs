@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
@@ -15,10 +16,24 @@ namespace MusicPlayer
     {
         // Global Variables for track names and paths
         String[] paths, files;
+        private bool aiPlayer = false;
+        SoundPlayer tone1 = new SoundPlayer(@"C:\Users\Chris\source\repos\MusicPlayer\Tones\C5.wav");
+        SoundPlayer tone2 = new SoundPlayer(@"C:\Users\Chris\source\repos\MusicPlayer\Tones\A5.wav");
+        SoundPlayer tone3 = new SoundPlayer(@"C:\Users\Chris\source\repos\MusicPlayer\Tones\F5.wav");
 
         public MusicPlayer()
         {
             InitializeComponent();
+        }
+
+        private async void PlayAiMusic()
+        {
+            await Task.Delay(1000);
+            tone1.Play();
+            await Task.Delay(2000);
+            tone3.Play();
+            await Task.Delay(1000);
+            tone2.Play();
         }
 
         private void SelectButton_Click(object sender, EventArgs e)
@@ -50,6 +65,22 @@ namespace MusicPlayer
         {
             SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
             simpleSound.Play();
+        }
+
+        private void AiMusic_Click(object sender, EventArgs e)
+        {
+            PlayAiMusic();
+            /*
+            if (!aiPlayer)
+            {
+                aiPlayer = true;
+                PlayAiMusic();
+            } 
+            else
+            {
+                aiPlayer = false;
+            }
+            */
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
